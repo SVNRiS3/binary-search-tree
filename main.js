@@ -12,6 +12,25 @@ class Tree {
   constructor(arr) {
     this.root = buildTreeInit(arr);
   }
+
+  insert(value, root = this.root) {
+    if (root.data === value) {
+      console.log('Value is already in the tree!');
+      return;
+    } else if (root.data < value) {
+      if (root.right === null) {
+        root.right = new Node(value);
+        return;
+      }
+      this.insert(value, root.right);
+    } else {
+      if (root.left === null) {
+        root.left = new Node(value);
+        return;
+      }
+      this.insert(value, root.left);
+    }
+  }
 }
 
 function prepareArr(arr) {
@@ -52,5 +71,5 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
 const BST = new Tree(prepareArr(testArr));
-
+BST.insert(72);
 prettyPrint(BST.root);
