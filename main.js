@@ -11,7 +11,7 @@ class Node {
 class Tree {
   constructor(arr) {
     this.arr = prepareArr(arr);
-    this.root = buildTree(arr);
+    this.root = buildTree(this.arr);
   }
 }
 
