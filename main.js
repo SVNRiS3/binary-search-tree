@@ -10,8 +10,7 @@ class Node {
 
 class Tree {
   constructor(arr) {
-    this.arr = prepareArr(arr);
-    this.root = buildTree(this.arr);
+    this.root = buildTree(arr);
   }
 }
 
@@ -35,4 +34,4 @@ function buildTree(arr, start, end) {
 
 const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
-const BST = new Tree(buildTree(testArr));
+const BST = new Tree(prepareArr(testArr));
