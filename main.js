@@ -1,3 +1,5 @@
+import mergeSort from './merge-sort';
+
 class Node {
   constructor(data, left, right) {
     this.data = data;
