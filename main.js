@@ -21,14 +21,13 @@ function prepareArr(arr) {
 }
 
 function buildTree(arr, start, end) {
-  if (start > end) return;
+  if (start > end) return null;
 
-  const middle = Math.floor(end - start) / 2;
+  const middle = start + Math.floor((end - start) / 2);
   const node = new Node(arr[middle]);
-  console.log({ start, middle, end });
 
-  node.left = buildTree(arr, 0, middle - 1);
-  node.right = buildTree(arr, middle + 1, arr.length - 1);
+  node.left = buildTree(arr, start, middle - 1);
+  node.right = buildTree(arr, middle + 1, end);
 
   return node;
 }
