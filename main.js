@@ -10,14 +10,18 @@ class Node {
 
 class Tree {
   constructor(arr) {
+    this.arr = prepareArr(arr);
     this.root = buildTree(arr);
   }
 }
 
-function buildTree(arr) {
+function prepareArr(arr) {
   const sortedArr = mergeSort(arr);
-  const SortedArrUniq = [...new Set(sortedArr)];
+  const sortedArrUniq = [...new Set(sortedArr)];
+  return sortedArrUniq;
 }
+
+function buildTree(arr) {}
 
 const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
