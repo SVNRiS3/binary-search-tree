@@ -1,10 +1,10 @@
 import mergeSort from './mergeSort';
 
 class Node {
-  constructor(data, left, right) {
+  constructor(data) {
     this.data = data;
-    this.left = left;
-    this.right = right;
+    this.left = null;
+    this.right = null;
   }
 }
 
@@ -21,7 +21,11 @@ function prepareArr(arr) {
   return sortedArrUniq;
 }
 
-function buildTree(arr) {}
+function buildTree(arr, start, end) {
+  if (start > end) return;
+  const middle = Math.floor(end - start) / 2;
+  const node = new Node(arr[middle]);
+}
 
 const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
