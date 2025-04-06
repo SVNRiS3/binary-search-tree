@@ -36,10 +36,6 @@ function buildTreeInit(arr) {
   return buildTree(arr, 0, arr.length - 1);
 }
 
-const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-
-const BST = new Tree(prepareArr(testArr));
-
 const prettyPrint = (node, prefix = '', isLeft = true) => {
   if (node === null) {
     return;
@@ -52,5 +48,9 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
     prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
   }
 };
+
+const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+
+const BST = new Tree(prepareArr(testArr));
 
 prettyPrint(BST.root);
