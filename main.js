@@ -23,8 +23,14 @@ function prepareArr(arr) {
 
 function buildTree(arr, start, end) {
   if (start > end) return;
+
   const middle = Math.floor(end - start) / 2;
   const node = new Node(arr[middle]);
+
+  node.left = buildTree(arr, 0, middle - 1);
+  node.right = buildTree(arr, middle + 1, arr.length - 1);
+
+  return node;
 }
 
 const testArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
